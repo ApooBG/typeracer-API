@@ -1,0 +1,319 @@
+# flyctl launch added from .gitignore
+**/<<<<<<< Updated upstream
+# The following command works for downloading when using Git for Windows:
+# curl -LOf http://gist.githubusercontent.com/kmorcinek/2710267/raw/.gitignore
+#
+# Download this file using PowerShell v3 under Windows with the following comand:
+# Invoke-WebRequest https://gist.githubusercontent.com/kmorcinek/2710267/raw/ -OutFile .gitignore
+#
+# or wget:
+# wget --no-check-certificate http://gist.githubusercontent.com/kmorcinek/2710267/raw/.gitignore
+
+# User-specific files
+**/*.suo
+**/*.user
+**/*.sln.docstates
+
+# Build results
+**/[Dd]ebug
+**/[Rr]elease
+**/x64
+**/[Bb]in
+**/[Oo]bj
+# build folder is nowadays used for build scripts and should not be ignored
+#build/
+
+# NuGet Packages
+**/*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/**/packages/*
+# except build/, which is used as an MSBuild target.
+!**/**/packages/build
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/packages/repositories.config
+
+# MSTest test Results
+**/[Tt]est[Rr]esult*
+**/[Bb]uild[Ll]og.*
+
+**/*_i.c
+**/*_p.c
+**/*.ilk
+**/*.meta
+**/*.obj
+**/*.pch
+**/*.pdb
+**/*.pgc
+**/*.pgd
+**/*.rsp
+**/*.sbr
+**/*.tlb
+**/*.tli
+**/*.tlh
+**/*.tmp
+**/*.tmp_proj
+**/*.log
+**/*.vspscc
+**/*.vssscc
+**/.builds
+**/*.pidb
+**/*.scc
+
+# OS generated files #
+**/.DS_Store*
+**/Icon?
+
+# Visual C++ cache files
+**/ipch
+**/*.aps
+**/*.ncb
+**/*.opensdf
+**/*.sdf
+**/*.cachefile
+
+# Visual Studio profiler
+**/*.psess
+**/*.vsp
+**/*.vspx
+
+# Guidance Automation Toolkit
+**/*.gpState
+
+# ReSharper is a .NET coding add-in
+**/_ReSharper*
+**/*.[Rr]e[Ss]harper
+
+# TeamCity is a build add-in
+**/_TeamCity*
+
+# DotCover is a Code Coverage Tool
+**/*.dotCover
+
+# NCrunch
+**/*.ncrunch*
+**/.*crunch*.local.xml
+
+# Installshield output folder
+**/[Ee]xpress
+
+# DocProject is a documentation generator add-in
+**/DocProject/buildhelp
+**/DocProject/Help/*.HxT
+**/DocProject/Help/*.HxC
+**/DocProject/Help/*.hhc
+**/DocProject/Help/*.hhk
+**/DocProject/Help/*.hhp
+**/DocProject/Help/Html2
+**/DocProject/Help/html
+
+# Click-Once directory
+**/publish
+
+# Publish Web Output
+**/*.Publish.xml
+
+# Windows Azure Build Output
+**/csx
+**/*.build.csdef
+
+# Windows Store app package directory
+**/AppPackages
+
+# Others
+**/*.Cache
+**/ClientBin
+**/[Ss]tyle[Cc]op.*
+**/~$*
+**/*~
+**/*.dbmdl
+**/*.[Pp]ublish.xml
+**/*.pfx
+**/*.publishsettings
+**/modulesbin
+**/tempbin
+
+# EPiServer Site file (VPP)
+**/AppData
+
+# RIA/Silverlight projects
+**/Generated_Code
+
+# Backup & report files from converting an old project file to a newer
+# Visual Studio version. Backup files are not needed, because we have git ;-)
+**/_UpgradeReport_Files
+**/Backup*
+**/UpgradeLog*.XML
+**/UpgradeLog*.htm
+
+# vim
+**/*.txt~
+**/*.swp
+**/*.swo
+
+# Temp files when opening LibreOffice on ubuntu
+**/.~lock.*
+
+# svn
+**/.svn
+
+# CVS - Source Control
+**/**/CVS
+
+# Remainings from resolving conflicts in Source Control
+**/*.orig
+
+# SQL Server files
+**/**/App_Data/*.mdf
+**/**/App_Data/*.ldf
+**/**/App_Data/*.sdf
+
+
+#LightSwitch generated files
+**/GeneratedArtifacts
+**/_Pvt_Extensions
+**/ModelManifest.xml
+
+# =========================
+# Windows detritus
+# =========================
+
+# Windows image file caches
+**/Thumbs.db
+**/ehthumbs.db
+
+# Folder config file
+**/Desktop.ini
+
+# Recycle Bin used on file shares
+**/$RECYCLE.BIN
+
+# Mac desktop service store files
+**/.DS_Store
+
+# SASS Compiler cache
+**/.sass-cache
+
+# Visual Studio 2014 CTP
+**/**/*.sln.ide
+
+# Visual Studio temp something
+**/.vs
+
+# dotnet stuff
+**/project.lock.json
+
+# VS 2015+
+**/*.vc.vc.opendb
+**/*.vc.db
+
+# Rider
+**/.idea
+
+# Visual Studio Code
+**/.vscode
+
+# Output folder used by Webpack or other FE stuff
+**/**/node_modules/*
+**/**/wwwroot/*
+
+# SpecFlow specific
+**/*.feature.cs
+**/*.feature.xlsx.*
+**/*.Specs_*.html
+
+#####
+# End of core ignore list, below put you custom 'per project' settings (patterns or path)
+#####
+**/Business/obj/Debug/net6.0/Business.GeneratedMSBuildEditorConfig.editorconfig
+**/*.cache
+**/=======
+
+**/.vs/CateringApp/config/applicationhost.config
+**/.vs/CateringApp/DesignTimeBuild/.dtbcache.v2
+**/.vs/CateringApp/FileContentIndex/4f393a09-692a-49c6-b1aa-17ebd72a1b90.vsidx
+**/.vs/CateringApp/FileContentIndex/89276496-f2ae-47a9-87ed-7c919aacd170.vsidx
+**/.vs/CateringApp/FileContentIndex/9103bdcd-0470-4f2d-b7ee-09d9f5960f25.vsidx
+**/.vs/CateringApp/FileContentIndex/f11f24e2-8a8a-4f05-8239-a2b186bfb9fc.vsidx
+**/.vs/CateringApp/FileContentIndex/read.lock
+**/.vs/CateringApp/v17/.futdcache.v2
+**/.vs/CateringApp/v16/.suo
+**/.vs/CateringApp/v17/.suo
+**/.vs/ProjectEvaluation/cateringapp.metadata.v5.1
+**/.vs/ProjectEvaluation/cateringapp.projects.v5.1
+**/Business/bin/Debug/net6.0/Business.deps.json
+**/Business/bin/Debug/net6.0/Business.dll
+**/Business/bin/Debug/net6.0/Business.pdb
+**/Business/bin/Debug/net6.0/DAL.dll
+**/Business/bin/Debug/net6.0/DAL.pdb
+**/Business/bin/Debug/net6.0/DTO.dll
+**/Business/bin/Debug/net6.0/DTO.pdb
+**/Business/obj/Debug/net6.0/Business.csproj.BuildWithSkipAnalyzers
+**/Business/obj/Debug/net6.0/Business.csproj.CopyComplete
+**/Business/obj/Debug/net6.0/Business.csproj.FileListAbsolute.txt
+**/Business/obj/Debug/net6.0/Business.csproj.CoreCompileInputs.cache
+**/Business/obj/Debug/net6.0/Business.dll
+**/Business/obj/Debug/net6.0/Business.pdb
+**/Business/obj/Debug/net6.0/ref/Business.dll
+**/Business/obj/Debug/net6.0/refint/Business.dll
+**/CateringApp/.vs/CateringApp/DesignTimeBuild/.dtbcache.v2
+**/CateringApp/.vs/CateringApp/FileContentIndex/9bfbb2a8-3b80-4fdb-b0d4-792fdd54c20a.vsidx
+**/CateringApp/.vs/CateringApp/FileContentIndex/read.lock
+**/CateringApp/.vs/CateringApp/v17/.futdcache.v2
+**/CateringApp/.vs/ProjectEvaluation/cateringapp.metadata.v5.1
+**/CateringApp/.vs/ProjectEvaluation/cateringapp.projects.v5.1
+**/CateringApp/bin/Debug/net6.0/appsettings.Development.json
+**/CateringApp/bin/Debug/net6.0/appsettings.json
+**/CateringApp/bin/Debug/net6.0/Business.dll
+**/CateringApp/bin/Debug/net6.0/Business.pdb
+**/CateringApp/bin/Debug/net6.0/CateringApp.deps.json
+**/CateringApp/bin/Debug/net6.0/CateringApp.dll
+**/CateringApp/bin/Debug/net6.0/CateringApp.exe
+**/CateringApp/bin/Debug/net6.0/CateringApp.pdb
+**/CateringApp/bin/Debug/net6.0/CateringApp.runtimeconfig.json
+**/CateringApp/bin/Debug/net6.0/DAL.dll
+**/CateringApp/bin/Debug/net6.0/DAL.pdb
+**/CateringApp/bin/Debug/net6.0/DTO.dll
+**/CateringApp/bin/Debug/net6.0/DTO.pdb
+**/CateringApp/bin/Debug/net6.0/Microsoft.OpenApi.dll
+**/CateringApp/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+**/CateringApp/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+**/CateringApp/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+**/CateringApp/CateringApp.csproj.user
+**/CateringApp/obj/Debug/net6.0/apphost.exe
+**/CateringApp/obj/Debug/net6.0/CateringApp.csproj.BuildWithSkipAnalyzers
+**/CateringApp/obj/Debug/net6.0/CateringApp.csproj.CopyComplete
+**/CateringApp/obj/Debug/net6.0/CateringApp.csproj.CoreCompileInputs.cache
+**/CateringApp/obj/Debug/net6.0/CateringApp.csproj.FileListAbsolute.txt
+**/CateringApp/obj/Debug/net6.0/CateringApp.dll
+**/CateringApp/obj/Debug/net6.0/CateringApp.genruntimeconfig.cache
+**/CateringApp/obj/Debug/net6.0/CateringApp.MvcApplicationPartsAssemblyInfo.cache
+**/CateringApp/obj/Debug/net6.0/CateringApp.MvcApplicationPartsAssemblyInfo.cs
+**/CateringApp/obj/Debug/net6.0/CateringApp.pdb
+**/CateringApp/obj/Debug/net6.0/ref/CateringApp.dll
+**/CateringApp/obj/Debug/net6.0/refint/CateringApp.dll
+**/CateringApp/obj/Debug/net6.0/staticwebassets.build.json
+**/CateringApp/obj/staticwebassets.pack.sentinel
+**/DAL/bin/Debug/net6.0/DAL.deps.json
+**/DAL/bin/Debug/net6.0/DAL.dll
+**/DAL/bin/Debug/net6.0/DAL.pdb
+**/DAL/bin/Debug/net6.0/DTO.dll
+**/DAL/bin/Debug/net6.0/DTO.pdb
+**/DAL/obj/Debug/net6.0/DAL.csproj.BuildWithSkipAnalyzers
+**/DAL/obj/Debug/net6.0/DAL.csproj.CopyComplete
+**/DAL/obj/Debug/net6.0/DAL.csproj.CoreCompileInputs.cache
+**/DAL/obj/Debug/net6.0/DAL.csproj.FileListAbsolute.txt
+**/DAL/obj/Debug/net6.0/DAL.dll
+**/DAL/obj/Debug/net6.0/DAL.pdb
+**/DAL/obj/Debug/net6.0/ref/DAL.dll
+**/DAL/obj/Debug/net6.0/refint/DAL.dll
+**/DTO/bin/Debug/net6.0/DTO.deps.json
+**/DTO/bin/Debug/net6.0/DTO.dll
+**/DTO/bin/Debug/net6.0/DTO.pdb
+**/DTO/obj/Debug/net6.0/DTO.csproj.BuildWithSkipAnalyzers
+**/DTO/obj/Debug/net6.0/DTO.csproj.CoreCompileInputs.cache
+**/DTO/obj/Debug/net6.0/DTO.csproj.FileListAbsolute.txt
+**/DTO/obj/Debug/net6.0/DTO.dll
+**/DTO/obj/Debug/net6.0/DTO.pdb
+**/DTO/obj/Debug/net6.0/ref/DTO.dll
+**/DTO/obj/Debug/net6.0/refint/DTO.dll
+**/>>>>>>> Stashed changes
