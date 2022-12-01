@@ -13,11 +13,13 @@ namespace DAL.Handlers
     {
         List<User> users;
         List<MainPage> activeUsers;
+        List<string> tryToTest;
 
         public UserHandler()
         {
             users = new List<User>();
             activeUsers = new List<MainPage>();
+            tryToTest = new List<string>();
 
         }
 
@@ -28,6 +30,7 @@ namespace DAL.Handlers
                 if (user.Name == name)
                 {
                     // user.ChangePassword(password);
+                    tryToTest.Add(password);
                 }
             }
         }
