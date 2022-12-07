@@ -99,7 +99,7 @@ namespace BusinessTests1
             RoundManager _manager = new RoundManager(fakeRepo);
 
             _manager.FinishRound(1);
-            Assert.AreEqual(fakeRepo.listOfRounds[0].WinnerID, 3);
+            Assert.AreEqual(fakeRepo.listOfRounds[0].WinnerID, 2);
 
 
         }
