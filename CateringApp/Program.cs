@@ -19,6 +19,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IUserHandler, UserHandler>();
 builder.Services.AddSingleton<IUserManager, UserManager>();
+builder.Services.AddSingleton<IRankedHandler, RankedHandler>();
+builder.Services.AddSingleton<IRankedManager, RankedManager>();
+builder.Services.AddSingleton<IRoundHandler, RoundHandler>();
+builder.Services.AddSingleton<IRoundManager, RoundManager>();
 builder.Services.AddMvc().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.PropertyNamingPolicy = null;
@@ -31,6 +35,10 @@ var app = builder.Build();
 
 IUserHandler user = app.Services.GetRequiredService<IUserHandler>();
 IUserManager userManager = app.Services.GetRequiredService<IUserManager>();
+IRankedHandler ranked = app.Services.GetRequiredService<IRankedHandler>();
+IRankedManager rankedManager = app.Services.GetRequiredService<IRankedManager>();
+IRoundHandler round = app.Services.GetRequiredService<IRoundHandler>();
+IRoundManager roundManager = app.Services.GetRequiredService<IRoundManager>();
 
 
 // Configure the HTTP request pipeline.

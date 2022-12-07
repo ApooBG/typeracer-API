@@ -11,29 +11,24 @@ namespace DAL.Handlers
 {
     public class UserHandler : IUserHandler
     {
+        private IUserHandler _userHandler = new UserHandler();
+
         List<User> users;
-        List<MainPage> activeUsers;
+
         List<string> tryToTest;
 
         public UserHandler()
         {
             users = new List<User>();
-            activeUsers = new List<MainPage>();
             tryToTest = new List<string>();
 
         }
 
-        public void ChangePassword(string name, string password)
+        public UserHandler(IUserHandler _userHandler)
         {
-            foreach (User user in users)
-            {
-                if (user.Name == name)
-                {
-                    // user.ChangePassword(password);
-                    tryToTest.Add(password);
-                }
-            }
+            this._userHandler = _userHandler;
         }
+
 
         public List<User> GetUsers()
         {
@@ -49,23 +44,13 @@ namespace DAL.Handlers
             }
             context.Dispose();
             return users;
-
-
         }
 
-        public void CreateUser(string username, string password, string email, string name, string country, string rank)
+        public void CreateUser(User u)
         {
             using (TyperacerContext context = new TyperacerContext())
             {
-                User u = new User()
-                {
-                    Username = username,
-                    Password = password,
-                    Email = email,
-                    Name = name,
-                    Country = country,
-                    joined = DateTime.Now
-                };
+
                 context.Users.Add(u);
                 context.SaveChanges();
             }
@@ -88,9 +73,42 @@ namespace DAL.Handlers
               }
             context.Dispose();
             return u;
-
-
         }
+
+        public User GetUserByUsername(string username)
+        {
+            TyperacerContext context;
+            User u = null;
+
+            using (context = new TyperacerContext())
+            {
+                u = context.Users
+                      .First(p => p.Username == username);
+
+            }
+
+            context.Dispose();
+            return u;
+        }
+
+
+        public void UpdateUser(User u)
+        {
+            TyperacerContext context;
+
+            using (context = new TyperacerContext())
+            {
+                User user = context.Users.First(p => p.ID == u.ID);
+                if (user.ID == u.ID)
+                {
+                    user = u;
+                }
+                context.Users.Update(user);
+                context.SaveChanges();
+                context.Dispose();
+            }
+        }
+
 
         public User GetUser(int id)
         {
@@ -114,48 +132,7 @@ namespace DAL.Handlers
 
         }
 
-        public void MakePlayerActive(int id)
-        {
-            User user = GetUser(id);
-            MainPage activeUser = new MainPage()
-            { UserID = id,
-                Username = user.Username,
-                wpm = 0
-            };
-            if (activeUsers.Find(u => u.Id == id) == null)
-            activeUsers.Add(activeUser);
-        }
-        public List<MainPage> GetPlayersInMain()
-        {
-            return this.activeUsers;
-        }
-
-
-        public void UpdateWPM(int id, int wpm)
-        {
-            int i = -1;
-            foreach (MainPage user in GetPlayersInMain())
-            {
-                i++;
-                if (user.UserID == id)
-                {
-                    user.wpm = wpm;
-                    return;
-                }
-            }
-        }
-
-        public void RemoveUserFromMain(int id)
-        {
-            foreach (MainPage user in GetPlayersInMain())
-            {
-                if (user.UserID == id)
-                {
-                    activeUsers.Remove(user);
-                    return;
-                }
-            }
-        }
+        
 
         public string TypeRacerText(int id)
         {

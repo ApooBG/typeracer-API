@@ -12,17 +12,21 @@ namespace Business
     public class UserManager : IUserManager
     {
         private readonly IUserHandler _userHandler;
-        List<User> users;
+        public List<User> users;
+        public List<MainPage> activeUsers;
 
         public UserManager(IUserHandler _userHandler)
         {
             this._userHandler = _userHandler;
             this.users = new List<User>();
+            this.activeUsers = new List<MainPage>();
         }
 
         public void ChangePassword(string username, string password)
         {
-            _userHandler.ChangePassword(username, password);
+            User u = _userHandler.GetUserByUsername(username);
+            u.Password = password;
+            _userHandler.UpdateUser(u);
         }
 
         public List<User> GetUsers()
@@ -32,7 +36,16 @@ namespace Business
 
         public void CreateUser(string username, string password, string email, string name, string country, string rank)
         {
-            _userHandler.CreateUser(username, password, email, name, country, rank);
+            User u = new User()
+            {
+                Username = username,
+                Password = password,
+                Email = email,
+                Name = name,
+                Country = country,
+                joined = DateTime.Now
+            };
+            _userHandler.CreateUser(u);
         } 
 
         public User FindUser(string username, string password)
@@ -53,21 +66,46 @@ namespace Business
         }
         public void MakePlayerActive(int id)
         {
-            _userHandler.MakePlayerActive(id);
+            User user = GetUser(id);
+            MainPage activeUser = new MainPage()
+            {
+                UserID = id,
+                Username = user.Username,
+                wpm = 0
+            };
+            if (activeUsers.Find(u => u.Id == id) == null)
+                activeUsers.Add(activeUser);
         }
         public List<MainPage> GetPlayersInMain()
         {
-            return _userHandler.GetPlayersInMain();
+            return this.activeUsers;
         }
+
+
         public void UpdateWPM(int id, int wpm)
         {
-            _userHandler.UpdateWPM(id, wpm);
+            int i = -1;
+            foreach (MainPage user in GetPlayersInMain())
+            {
+                i++;
+                if (user.UserID == id)
+                {
+                    user.wpm = wpm;
+                    return;
+                }
+            }
         }
 
         public void RemoveUserFromMain(int id)
         {
-            _userHandler.RemoveUserFromMain(id);
+            foreach (MainPage user in GetPlayersInMain())
+            {
+                if (user.UserID == id)
+                {
+                    activeUsers.Remove(user);
+                    return;
+                }
+            }
         }
-
     }
 }

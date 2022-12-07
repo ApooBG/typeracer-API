@@ -9,15 +9,12 @@ namespace DAL.Interfaces
 {
     public interface IUserHandler
     {
-        public void ChangePassword(string name, string password);
+        public void UpdateUser(User u);
         public List<User> GetUsers();
-        public void CreateUser(string username, string password, string email, string name, string country, string rank);
+        public void CreateUser(User u);
         public User FindUser(string username, string password);
         public User GetUser(int id);
-        public void MakePlayerActive(int id);
-        public List<MainPage> GetPlayersInMain();
-        public void UpdateWPM(int id, int wpm);
-        public void RemoveUserFromMain(int id);
+        public User GetUserByUsername(string username);
         public string TypeRacerText(int id);
         public int ChooseText();
 
