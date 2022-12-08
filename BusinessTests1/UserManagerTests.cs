@@ -36,7 +36,7 @@ namespace Business.Tests
 
             _manager.CreateUser(u.Username, u.Password, u.Email, "Ruslan", "Bulgaria", "active");
 
-            CollectionAssert.Equals(fakeRepo.listOfUsers[0].Username, u.Username);
+            Assert.AreEqual(fakeRepo.listOfUsers[0].Username, u.Username);
         }
 
         [TestMethod()]
@@ -68,7 +68,7 @@ namespace Business.Tests
 
             _manager.MakePlayerActive(1);
 
-            CollectionAssert.Equals(_manager.activeUsers[0].Id, u.ID);
+            Assert.AreEqual(_manager.activeUsers[0].UserID, u.ID);
         }
 
         [TestMethod()]

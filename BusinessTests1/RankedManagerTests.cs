@@ -27,7 +27,7 @@ namespace BusinessTests1
 
             _manager.StartSearching(1);
 
-            CollectionAssert.Contains(_manager.listOfUsers, u);
+            Assert.AreEqual(_manager.listOfUsers[0], u);
         }
 
 
@@ -75,7 +75,7 @@ namespace BusinessTests1
 
             _manager.LookForGame();
 
-            CollectionAssert.Equals(fakeRepo.listOfGames[0].User1ID, u1);
+            Assert.AreEqual(fakeRepo.listOfGames[0].User1ID, u1.UserID);
         }
     }
 }

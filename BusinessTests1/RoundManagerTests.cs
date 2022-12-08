@@ -44,7 +44,7 @@ namespace BusinessTests1
 
             _manager.CreateRound(1);
 
-            CollectionAssert.Equals(fakeRepo.listOfRounds[0].RoundID, 1);
+            Assert.AreEqual(fakeRepo.listOfRounds[0].RoundID, 1);
         }
 
         [TestMethod()]
